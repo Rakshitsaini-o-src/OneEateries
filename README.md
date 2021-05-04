@@ -1,5 +1,5 @@
 # OneEateries
-  Created simple get and post request using spring boot
+  Created simple get and post request for restaurant using spring boot
   * Get Request is "/oneeateries/rest/restaurant/menu/"
   * Post Request is "/oneeateries/rest/restaurant/menu"
   * A simple post request body:-
