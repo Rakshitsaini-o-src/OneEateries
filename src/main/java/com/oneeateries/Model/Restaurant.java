@@ -4,7 +4,7 @@
  * Date- 01/05/21_9:43 PM
  * Description- POJO Class for A Restaurant
  **/
-package com.example.oneeateries.Model;
+package com.oneeateries.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

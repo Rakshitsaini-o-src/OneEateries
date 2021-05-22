@@ -4,10 +4,10 @@
  * Date- 01/05/21_9:48 PM
  * Description- Mapping url to a function
  **/
-package com.example.oneeateries.controllers;
+package com.oneeateries.controllers;
 
-import com.example.oneeateries.Model.Restaurant;
-import com.example.oneeateries.Repositories.RestaurantsRepository;
+import com.oneeateries.Model.Restaurant;
+import com.oneeateries.Repositories.RestaurantsRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;

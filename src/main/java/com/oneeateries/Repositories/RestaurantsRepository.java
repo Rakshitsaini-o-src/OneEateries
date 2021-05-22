@@ -4,9 +4,9 @@
   Date- 01/05/21_9:52 PM
   Description- For database Connection and methods
  **/
-package com.example.oneeateries.Repositories;
+package com.oneeateries.Repositories;
 
-import com.example.oneeateries.Model.Restaurant;
+import com.oneeateries.Model.Restaurant;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,6 @@ import java.util.List;
 
 @Service
 public class RestaurantsRepository {
-
     //List of Restaurant
     public List<Restaurant> restaurantList = new ArrayList<>();
 

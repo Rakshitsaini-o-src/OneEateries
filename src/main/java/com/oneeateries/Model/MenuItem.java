@@ -4,7 +4,7 @@
  * Date- 02/05/21_2:22 AM
  * Description- POJO class for menu item
  **/
-package com.example.oneeateries.Model;
+package com.oneeateries.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
