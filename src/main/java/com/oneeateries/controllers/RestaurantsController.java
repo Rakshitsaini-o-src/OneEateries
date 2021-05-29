@@ -18,7 +18,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/oneeateries/rest/restaurant/")
+@RequestMapping("/restaurant/")
 public class RestaurantsController {
     @Autowired
     private RestaurantsRepository repository;
