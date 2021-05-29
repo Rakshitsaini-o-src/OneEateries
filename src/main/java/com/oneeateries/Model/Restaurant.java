@@ -10,25 +10,25 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-
 import java.util.List;
+
 
 @Getter @Setter
 @AllArgsConstructor
 public class Restaurant {
     @Id
-    private String  _restaurantId;
+    private String restaurantId;
     private String restaurantName;
-    private String _menuId;
+    private String menuId;
     private String menuName;
     private List<MenuItem> menuItem;
 
     @Override
     public String toString() {
         return "Restaurant{" +
-                "_restaurantId='" + _restaurantId + '\'' +
+                "restaurantId='" + restaurantId + '\'' +
                 ", restaurantName='" + restaurantName + '\'' +
-                ", _menuId='" + _menuId + '\'' +
+                ", menuId='" + menuId + '\'' +
                 ", menuName='" + menuName + '\'' +
                 ", menuItem=" + menuItem +
                 '}';

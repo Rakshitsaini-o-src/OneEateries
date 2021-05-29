@@ -11,11 +11,12 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+
 @AllArgsConstructor
 @Getter @Setter
 public class MenuItem {
     @Id
-    private String _itemID;
+    private String itemID;
     private String itemName;
     private String description;
     private String price;
@@ -23,7 +24,7 @@ public class MenuItem {
     @Override
     public String toString() {
         return "MenuItem{" +
-                "_itemID='" + _itemID + '\'' +
+                "itemID='" + itemID + '\'' +
                 ", itemName='" + itemName + '\'' +
                 ", description='" + description + '\'' +
                 ", price='" + price + '\'' +
