@@ -1,7 +1,7 @@
 #OneEateries
 It is a simple project which will help to order food.
-Its a work in progress.Currently, it includes feature of showing and adding of restuarant and menu Item.
-##Instalation 
+It's a work in progress.Currently, it includes feature of showing and adding of restaurant and menu Item.
+##Installation 
 * go inside the directory through a terminal
 * type ./mvnw clean package(linux/mac) / mvnw clean package(windows)
 * then cd target
