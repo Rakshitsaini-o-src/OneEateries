@@ -13,7 +13,7 @@ It's a work in progress.Currently, it includes feature of showing and adding of 
   * Post Request for restaurant is "localhost:8080/restaurant/" => Saves a restaurant
   * Get Request for MenuItem is "localhost:8080/restaurant/:{id}/menu/" => gets menu of a particular restaurant whose id = :{id}
  * Get Request for MenuItem is "localhost:8080/restaurant/:{id}/menu/" => adds a list of menuitem in the particular restaurant's menu whose id = :{id}
- ### In order to get the :{id} run the get request of restaurant and copy the value of restaurantId i.e "restaurantId": "60b1d567b229ac6ad1367cec" here :{id} = 60b1d567b229ac6ad1367cec
+ ### In order to get the :{id} run the get request of restaurant and copy the value of restaurantId i.e "restaurantId": "60b1d567b229ac6ad1367cec" here :{id} = 60b1d567b229ac6ad1367cec.By Default there are no restaurant,So you need to add one.
   * A simple post request body for adding restaurant:-\
     {
 	    "restaurantName": "A",

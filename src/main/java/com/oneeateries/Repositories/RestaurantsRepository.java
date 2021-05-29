@@ -12,13 +12,16 @@ import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class RestaurantsRepository {
+
     //List of Restaurant
-    public List<Restaurant> restaurantList = new ArrayList<>();
+    public List<Restaurant> restaurantList = new ArrayList<Restaurant>();
     //Adding Restaurant to the list
     public String addRestaurant(Restaurant restaurant){
         //a unique 24-byte hexadecimal string
