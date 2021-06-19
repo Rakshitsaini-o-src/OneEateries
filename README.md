@@ -3,9 +3,8 @@ It is a simple project which will help to order food.
 It's a work in progress.Currently, it includes feature of showing and adding of restaurant and menu Item.
 ##Installation 
 * go inside the directory through a terminal
-* type ./mvnw clean package(linux/mac) / mvnw clean package(windows)
-* then cd target
-* java -jar OneEateries-0.0.1-SNAPSHOT.jar
+* For Mac/Linux type `./mvnw package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar`
+* For Windows `mvnw package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar`
 * this will start the server  
 
 ##Created simple get and post request for restaurant using spring boot
