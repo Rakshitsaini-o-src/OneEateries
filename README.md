@@ -1,6 +1,7 @@
 # OneEateries
-It is a simple project which will help to order food.
-It's a work in progress.Currently, it includes feature of showing and adding of restaurant and menu Item.
+It is a simple project which will help to order food.\
+It's a work in progress.\
+Currently, it includes feature of showing and adding of restaurant, menu Item and Corporation.
 ## Installation 
 * Clone the repo using 
 ```sh 
