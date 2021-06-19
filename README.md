@@ -2,10 +2,22 @@
 It is a simple project which will help to order food.
 It's a work in progress.Currently, it includes feature of showing and adding of restaurant and menu Item.
 ## Installation 
-* Clone the repo using `git clone https://github.com/Rakshitsaini-o-src/OneEateries.git`
-* go inside the directory through a terminal using `cd OneEateries`
-* To run the application on Mac/Linux:- type `./mvnw package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar`
-* To run the application on Windows:- type `mvnw package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar`
+* Clone the repo using 
+```sh 
+git clone https://github.com/Rakshitsaini-o-src/OneEateries.git
+```
+* go inside the directory through a terminal using 
+```sh 
+cd OneEateries
+```
+* To run the application on Mac/Linux:- type 
+```sh
+./mvnw package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar
+```
+* To run the application on Windows:- type 
+```sh
+mvnw package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar
+```
 * this will start the server  
 
 ## Created simple get and post request for restaurant using spring boot
