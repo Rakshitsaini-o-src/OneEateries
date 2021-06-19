@@ -9,7 +9,7 @@ It's a work in progress.Currently, it includes feature of showing and adding of 
 * this will start the server  
 
 ## Created simple get and post request for restaurant using spring boot
-  * `Get`Request for restaurant is `localhost:8080/restaurant/` =>	`Shows all restaurant`
+  * Get Request for restaurant is `localhost:8080/restaurant/` =>	`Shows all restaurant`
   * `Post` Request for restaurant is `localhost:8080/restaurant/` => `Saves a restaurant`
   * `Get` Request for MenuItem is `localhost:8080/restaurant/:{id}/menu/` =>`gets menu of a particular restaurant whose id = :{id}`
   * `Post` Request for MenuItem is `localhost:8080/restaurant/:{id}/menu/` => `adds a list of menuitem in the particular restaurant's menu whose id = :{id}`\
