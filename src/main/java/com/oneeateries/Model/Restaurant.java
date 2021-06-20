@@ -19,7 +19,6 @@ public class Restaurant {
     @Id
     private String restaurantId;
     private String restaurantName;
-    private String menuId;
     private String menuName;
     private List<MenuItem> menuItem;
 
@@ -28,7 +27,6 @@ public class Restaurant {
         return "Restaurant{" +
                 "restaurantId='" + restaurantId + '\'' +
                 ", restaurantName='" + restaurantName + '\'' +
-                ", menuId='" + menuId + '\'' +
                 ", menuName='" + menuName + '\'' +
                 ", menuItem=" + menuItem +
                 '}';

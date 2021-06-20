@@ -5,6 +5,7 @@ import java.util.List;
 import com.oneeateries.Model.MenuItem;
 import com.oneeateries.Model.Restaurant;
 import com.oneeateries.Repositories.RestaurantsRepository;
+import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
@@ -19,6 +20,9 @@ public class RestaurantService {
     }
 
     public void addRestaurant(Restaurant restaurant){
+        for(var menuItem: restaurant.getMenuItem()){
+            menuItem.setItemID(ObjectId.get().toHexString());
+        }
         restaurantsRepository.save(restaurant);
     }
     
@@ -30,6 +34,7 @@ public class RestaurantService {
     public void addMenuItems(String restaurantID,List<MenuItem> menuItems){
         Restaurant restaurant = restaurantsRepository.getRestaurantByRestaurantId(restaurantID);
         for(var menuItem: menuItems){
+            menuItem.setItemID(ObjectId.get().toHexString());
             restaurant.getMenuItem().add(menuItem);
         }
     }
