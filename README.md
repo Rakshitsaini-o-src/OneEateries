@@ -2,6 +2,8 @@
 It is a simple project which will help to order food.\
 It's a work in progress.\
 Currently, it includes feature of showing and adding of restaurant, menu Item and Corporation.
+## Docker Support
+Change the branch to `dockerbuild` to build using docker
 ## Prerequisite
 * Java Sdk 16 [Download Here](https://adoptopenjdk.net)
 * Mongo Community server [Download Here](https://www.mongodb.com/try/download/community)
