@@ -8,39 +8,41 @@ package com.oneeateries.controllers;
 
 import com.oneeateries.Model.MenuItem;
 import com.oneeateries.Model.Restaurant;
-import com.oneeateries.Repositories.RestaurantsRepository;
-import lombok.extern.slf4j.Slf4j;
+import com.oneeateries.service.RestaurantService;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
-@Slf4j
 @RestController
 @RequestMapping("/restaurant/")
+@AllArgsConstructor
 public class RestaurantsController {
-    @Autowired
-    private RestaurantsRepository repository;
+    private final RestaurantService restaurantService;
+
     @GetMapping("/")
-    public List<Restaurant> getAllRestaurant(){
-        log.info(repository.restaurantList.toString());
-        return repository.restaurantList;
+    public ResponseEntity<List<Restaurant>> getAllRestaurant(){
+        return ResponseEntity.ok(restaurantService.getAllRestaurant());
     }
     @PostMapping("/")
-    public void addRestaurant(@Validated @RequestBody Restaurant restaurant){
-        log.info(repository.addRestaurant(restaurant));
+    public ResponseEntity<Void> addRestaurant(@Validated @RequestBody Restaurant restaurant){
+        restaurantService.addRestaurant(restaurant);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/{id}/menu/")
-    public List<MenuItem> getAllMenuItem(@PathVariable("id")String restaurantId){
-        List<MenuItem> menus = repository.getMenu(restaurantId);
-        log.info(menus.toString());
-        return menus;
+    public ResponseEntity<List<MenuItem>> getAllMenuItem(@PathVariable("id")String restaurantId){
+        return ResponseEntity.ok(restaurantService.getAllMenuItems(restaurantId));
     }
 
     @PostMapping("/{id}/menu/")
-    public void addMenu(@PathVariable("id")String restaurantId, @Validated @RequestBody List<MenuItem> menuItems){
-        log.info(repository.addMenu(restaurantId,menuItems));
+    public ResponseEntity<Void> addMenu(@PathVariable("id")String restaurantId, @Validated @RequestBody List<MenuItem> menuItems){
+        restaurantService.addMenuItems(restaurantId,menuItems);
+        return ResponseEntity.ok().build();
     }
 }

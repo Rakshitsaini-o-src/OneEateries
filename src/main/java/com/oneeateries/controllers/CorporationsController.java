@@ -8,35 +8,31 @@ package com.oneeateries.controllers;
 
 import com.oneeateries.Model.Corporation;
 import com.oneeateries.Repositories.CorporationsRepository;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.oneeateries.service.CorporationService;
+import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@Slf4j
 @RestController
 @RequestMapping("/corporation")
+@AllArgsConstructor
 public class CorporationsController {
-    @Autowired
-    private CorporationsRepository corporationsRepository;
+    private final CorporationService corporationService;
     @GetMapping("/")
-    public List<Corporation> getAllCorporation(){
-        log.info(corporationsRepository.corporationList.toString());
-        return corporationsRepository.corporationList;
+    public ResponseEntity<List<Corporation>> getAllCorporation(){
+        return ResponseEntity.ok(corporationService.getAllCorporation());
     }
 
     @GetMapping("/{id}")
-    public Corporation getCorporationById(@PathVariable("id")String id){
-        Corporation corporation = corporationsRepository.getCorporationById(id);
-        log.info(corporation.toString());
-        return corporation;
+    public ResponseEntity<Corporation> getCorporationById(@PathVariable("id")String id){
+        return ResponseEntity.ok(corporationService.getCorporationByID(id));
     }
 
     @PostMapping("/")
-    public String addCorporation(@Validated @RequestBody Corporation corporation){
-        corporationsRepository.addCorporation(corporation);
-        log.info(corporation.toString());
-        return corporation.toString();
+    public ResponseEntity<Void> addCorporation(@Validated @RequestBody Corporation corporation){
+        corporationService.addCorporation(corporation);
+        return  ResponseEntity.ok().build();
     }
 }
