@@ -2,6 +2,9 @@
 It is a simple project which will help to order food.\
 It's a work in progress.\
 Currently, it includes feature of showing and adding of restaurant, menu Item and Corporation.
+## Prerequisite
+* Java Sdk 16 [Download Here](https://adoptopenjdk.net)
+* Mongo Community server [Download Here](https://www.mongodb.com/try/download/community)
 ## Installation 
 * Clone the repo using 
 ```sh 
