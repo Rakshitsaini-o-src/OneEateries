@@ -4,7 +4,7 @@ It's a work in progress.\
 Currently, it includes feature of showing and adding of restaurant, menu Item and Corporation.
 ## Prerequisite
 * Java Sdk 11 or above [Download Here](https://adoptopenjdk.net)
-* Mongo Community server [Download Here](https://www.mongodb.com/try/download/community)
+* Mongo Community server [Download Here](https://www.mongodb.com/try/download/community) (if u want to run it without docker) 
 * Docker Desktop [Download Here](https://www.docker.com/products/docker-desktop) (if u want to build with docker)
 ## Installation (Standalone)
 * Clone the repo using 
