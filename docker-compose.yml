@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  api_service:
+    build: .
+    restart: always
+    ports:
+    - 8080:8080
+    environment: 
+      - spring_data_mongodb_host=mongo_db
+    depends_on:
+      - mongo_db
+    container_name: api_service
+  mongo_db:
+    image: "mongo:4.4.3"
+    restart: always
+    ports:
+      - 27017:27017
+    container_name: api_database

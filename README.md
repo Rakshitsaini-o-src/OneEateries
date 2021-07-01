@@ -2,15 +2,14 @@
 It is a simple project which will help to order food.\
 It's a work in progress.\
 Currently, it includes feature of showing and adding of restaurant, menu Item and Corporation.
-## Docker Support
-Change the branch to `dockerbuild` to build using docker
 ## Prerequisite
 * Java Sdk 11 or above [Download Here](https://adoptopenjdk.net)
 * Mongo Community server [Download Here](https://www.mongodb.com/try/download/community)
-## Installation 
+* Docker Desktop [Download Here](https://www.docker.com/products/docker-desktop) (if u want to build with docker)
+## Installation (Standalone)
 * Clone the repo using 
 ```sh 
-git clone --single-branch --branch main https://github.com/Rakshitsaini-o-src/OneEateries.git
+git clone https://github.com/Rakshitsaini-o-src/OneEateries.git
 
 ```
 * go inside the directory through a terminal using 
@@ -26,6 +25,35 @@ cd OneEateries
 mvnw package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar
 ```
 * this will start the server  
+## Installation (using docker)
+* Clone the repo using 
+```sh 
+git clone https://github.com/Rakshitsaini-o-src/OneEateries.git
+```
+* go inside the directory through a terminal using 
+```sh 
+cd OneEateries
+```
+* To Build jar file on Mac/Linux:- type 
+```sh
+./mvnw clean package
+```
+* To Build jar file on Windows:- type 
+```sh
+mvnw clean package
+```
+* To build the docker image
+```sh
+docker-compose build
+```
+* To start the docker image in detached mode(container runs in the background of your terminal)
+```sh
+docker-compose up -d
+```
+* To start the docker image in non-detched mode
+```sh
+docker-compose up
+```
 
 ## Created simple get and post request for restaurant using spring boot
   * Get Request for restaurant is `localhost:8080/restaurant/` =>	`Shows all restaurant`
