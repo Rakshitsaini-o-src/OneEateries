@@ -10,7 +10,8 @@ Change the branch to `dockerbuild` to build using docker
 ## Installation 
 * Clone the repo using 
 ```sh 
-git clone https://github.com/Rakshitsaini-o-src/OneEateries.git
+git clone --single-branch --branch main https://github.com/Rakshitsaini-o-src/OneEateries.git
+
 ```
 * go inside the directory through a terminal using 
 ```sh 
