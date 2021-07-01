@@ -5,7 +5,7 @@ Currently, it includes feature of showing and adding of restaurant, menu Item an
 ## Docker Support
 Change the branch to `dockerbuild` to build using docker
 ## Prerequisite
-* Java Sdk 11 [Download Here](https://adoptopenjdk.net)
+* Java Sdk 11 or above [Download Here](https://adoptopenjdk.net)
 * Mongo Community server [Download Here](https://www.mongodb.com/try/download/community)
 ## Installation 
 * Clone the repo using 
