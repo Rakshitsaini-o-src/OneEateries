@@ -1,7 +1,7 @@
 # OneEateries
 It is a simple project which will help to order food.\
 It's a work in progress.\
-Currently, it includes feature of showing and adding of restaurant, menu Item and Corporation.
+Currently, it includes feature of showing and adding of restaurant, menu Item and Corporation.\
 ## Prerequisite
 * Java Sdk 11 or above [Download Here](https://adoptopenjdk.net)
 * Mongo Community server [Download Here](https://www.mongodb.com/try/download/community)
@@ -54,7 +54,7 @@ docker-compose up -d
 ```sh
 docker-compose up
 ```
-
+#### If u used docker replace port 8080 with 9090 as im running nginx as Load Balancer in the steps given below.
 ## Created simple get and post request for restaurant using spring boot
   * Get Request for restaurant is `localhost:8080/restaurant/` =>	`Shows all restaurant`
   * `Post` Request for restaurant is `localhost:8080/restaurant/` => `Saves a restaurant`

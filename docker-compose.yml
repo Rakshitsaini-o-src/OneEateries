@@ -1,18 +1,39 @@
 version: "3.8"
 services:
-  api_service:
-    build: .
+  lb:
+    build: 
+      context: ./nginx/
+      dockerfile: Dockerfile
+    ports: 
+      - 9090:9090
+    container_name: oneeaterieslb
+    depends_on: 
+      - api_service1
+      - api_service2
+  api_service1:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     restart: always
     ports:
-    - 8080:8080
+    - 8181:8080
     environment: 
       - spring_data_mongodb_host=mongo_db
     depends_on:
       - mongo_db
-    container_name: api_service
+  api_service2:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+    - 8282:8080
+    environment: 
+      - spring_data_mongodb_host=mongo_db
+    depends_on:
+      - mongo_db
   mongo_db:
     image: "mongo:4.4.3"
     restart: always
     ports:
       - 27017:27017
-    container_name: api_database
