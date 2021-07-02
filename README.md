@@ -48,11 +48,11 @@ docker-compose build
 ```
 * To start the docker image in detached mode(container runs in the background of your terminal)
 ```sh
-docker-compose up -d --scale api_service=2
+docker-compose up -d
 ```
 * To start the docker image in non-detched mode
 ```sh
-docker-compose up --scale api_service=2
+docker-compose up
 ```
 #### If u used docker replace port 8080 with 9090 as im running nginx as Load Balancer in the steps given below.
 ## Created simple get and post request for restaurant using spring boot
