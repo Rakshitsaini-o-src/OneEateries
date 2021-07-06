@@ -12,15 +12,12 @@ services:
       - api_service2
   api_service1:
     container_name: api_service1
-    # deploy:
-    #   mode: replicated
-    #   replicas: 2
     build: 
       context: .
       dockerfile: Dockerfile
     restart: always
     ports:
-    - 8080
+    - 8181:8080
     environment: 
       - spring_data_mongodb_host=mongo_db
       - server_serverName=api_service1
