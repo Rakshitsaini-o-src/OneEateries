@@ -7,8 +7,11 @@ Currently, it includes feature of showing and adding of restaurant, menu Item an
 ## Prerequisite
 
 * Java Sdk 11 or above [Download Here](https://adoptopenjdk.net)
-* Mongo Community server [Download Here](https://www.mongodb.com/try/download/community) (if u want to run it without docker)
-* Docker Desktop [Download Here](https://www.docker.com/products/docker-desktop) (if u want to build with docker)
+* if u want to run it without docker
+  * Mongo Community Server [Download Here](https://www.mongodb.com/try/download/community)
+  * Redis Server [Download Here](https://redis.io/topics/quickstart)
+* if u want to build with docker
+  * Docker Desktop [Download Here](https://www.docker.com/products/docker-desktop)
 
 ## Installation (Standalone)
 
@@ -25,17 +28,18 @@ git clone https://github.com/Rakshitsaini-o-src/OneEateries.git
 cd OneEateries
 ```
 
-* To run the application on Mac/Linux:- type
+* To run the application:-
+  * on Mac/Linux
 
-```sh
-./mvnw package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar
-```
+  ```sh
+    ./mvnw clean package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar
+  ```
 
-* To run the application on Windows:- type
+  * on Windows
 
-```sh
-mvnw package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar
-```
+  ```sh
+    mvnw clean package && java -jar target/OneEateries-0.0.1-SNAPSHOT.jar
+  ```
 
 * this will start the server  
 
@@ -53,17 +57,18 @@ git clone https://github.com/Rakshitsaini-o-src/OneEateries.git
 cd OneEateries
 ```
 
-* To Build jar file on Mac/Linux:- type
+* To run the application:-
+  * on Mac/Linux
 
-```sh
-./mvnw clean package
-```
+  ```sh
+    ./mvnw clean package
+  ```
 
-* To Build jar file on Windows:- type
+  * on Windows
 
-```sh
-mvnw clean package
-```
+  ```sh
+    mvnw clean package
+  ```
 
 * To build the docker image
 
@@ -71,17 +76,18 @@ mvnw clean package
 docker-compose build
 ```
 
-* To start the docker image in detached mode(container runs in the background of your terminal)
+* To start the docker container
+  * In detached mode
 
-```sh
-docker-compose up -d
-```
+  ```sh
+    docker-compose up -d
+  ```
 
-* To start the docker image in non-detched mode
+  * In non-detched mode
 
-```sh
-docker-compose up
-```
+  ```sh
+    docker-compose up
+  ```
 
 ## Created simple get and post request for restaurant using spring boot
 

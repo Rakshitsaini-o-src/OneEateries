@@ -11,11 +11,12 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Document
 @Getter @Setter
-public class Restaurant {
+public class Restaurant implements Serializable {
     @Id
     private String restaurantId;
     private String restaurantName;

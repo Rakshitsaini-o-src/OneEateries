@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
     ports: 
       - 9090:9090
+    restart: always
     container_name: oneeaterieslb
     depends_on: 
       - api_service1
@@ -21,8 +22,10 @@ services:
     environment: 
       - spring_data_mongodb_host=mongo_db
       - server_serverName=api_service1
+      - spring_redis_host=redis_service
     depends_on:
       - mongo_db
+      - redis_service
   api_service2:
     container_name: api_service2
     build:
@@ -34,10 +37,19 @@ services:
     environment:
       - spring_data_mongodb_host=mongo_db
       - server_serverName=api_service2
+      - spring_redis_host=redis_service
     depends_on:
       - mongo_db
+      - redis_service
   mongo_db:
     image: "mongo:4.4.3"
     restart: always
     ports:
       - 27017:27017
+  redis_service:
+    image: "redis:latest"
+    container_name: redis_service
+    command: redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru
+    restart: always
+    ports: 
+      - 6379:6379

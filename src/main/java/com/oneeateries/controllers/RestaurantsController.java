@@ -10,7 +10,6 @@ import com.oneeateries.Model.MenuItem;
 import com.oneeateries.Model.Restaurant;
 import com.oneeateries.service.RestaurantService;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -34,10 +33,19 @@ public class RestaurantsController {
         restaurantService.addRestaurant(restaurant);
         return ResponseEntity.ok().build();
     }
+    @GetMapping("/{id}/")
+    public ResponseEntity<Restaurant> getRestaurant(@PathVariable("id")String restaurantId){
+        return ResponseEntity.ok(restaurantService.getRestaurantById(restaurantId));
+    }
 
     @GetMapping("/{id}/menu/")
     public ResponseEntity<List<MenuItem>> getAllMenuItem(@PathVariable("id")String restaurantId){
         return ResponseEntity.ok(restaurantService.getAllMenuItems(restaurantId));
+    }
+
+    @GetMapping("/{id}/menu/{menuId}/")
+    public ResponseEntity<MenuItem> getMenuItem(@PathVariable("id")String restaurantId,@PathVariable("menuId")String menuId){
+        return ResponseEntity.ok(restaurantService.getMenuById(restaurantId, menuId));
     }
 
     @PostMapping("/{id}/menu/")

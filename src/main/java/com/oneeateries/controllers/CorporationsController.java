@@ -7,7 +7,6 @@
 package com.oneeateries.controllers;
 
 import com.oneeateries.Model.Corporation;
-import com.oneeateries.Repositories.CorporationsRepository;
 import com.oneeateries.service.CorporationService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

@@ -6,6 +6,7 @@ import com.oneeateries.Model.MenuItem;
 import com.oneeateries.Model.Restaurant;
 import com.oneeateries.Repositories.RestaurantsRepository;
 import org.bson.types.ObjectId;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
@@ -18,7 +19,10 @@ public class RestaurantService {
     public List<Restaurant> getAllRestaurant(){
         return restaurantsRepository.findAll();
     }
-
+    @Cacheable(value = "Restaurant",key = "#restaurantId")
+    public Restaurant getRestaurantById(String restaurantId){
+        return restaurantsRepository.getRestaurantByRestaurantId(restaurantId);
+    }
     public void addRestaurant(Restaurant restaurant){
         for(var menuItem: restaurant.getMenuItem()){
             menuItem.setItemID(ObjectId.get().toHexString());
@@ -26,9 +30,20 @@ public class RestaurantService {
         restaurantsRepository.save(restaurant);
     }
     
-    public List<MenuItem> getAllMenuItems(String restuarantID){
-        Restaurant restaurant= restaurantsRepository.getRestaurantByRestaurantId(restuarantID);
+    public List<MenuItem> getAllMenuItems(String restaurantId){
+        Restaurant restaurant= restaurantsRepository.getRestaurantByRestaurantId(restaurantId);
         return restaurant.getMenuItem();
+    }
+
+    @Cacheable(value = "menu",key = "#menuItemId")
+    public MenuItem getMenuById(String restaurantId,String menuItemId){
+        Restaurant restaurant= restaurantsRepository.getRestaurantByRestaurantId(restaurantId);
+        for(var menuItem: restaurant.getMenuItem()){
+            if(menuItem.getItemID().equalsIgnoreCase(menuItemId)){
+                return menuItem;
+            }
+        }
+        return null;
     }
 
     public void addMenuItems(String restaurantID,List<MenuItem> menuItems){

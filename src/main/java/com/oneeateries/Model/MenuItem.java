@@ -6,12 +6,17 @@
  **/
 package com.oneeateries.Model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.io.Serializable;
+
 import org.springframework.data.annotation.Id;
 
+@EqualsAndHashCode
 @Getter @Setter
-public class MenuItem {
+public class MenuItem implements Serializable {
     @Id
     private String itemID;
     private String itemName;
